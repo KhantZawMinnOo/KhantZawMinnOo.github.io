@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta content="initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport" />
+	<meta name="viewport" content="width=device-width" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+
+	<link rel="stylesheet" href="jquery.mobile-1.1.1.min.css" />
+	<link rel="stylesheet" href="styles.css" />
+
+	<script src="jquery-1.7.1.min.js"></script>
+	<script src="jquery.mobile-1.1.1.min.js"></script>
+	<script src="jqm.autoComplete-1.5.1-min.js"></script>
+</head>
+
+<style>::placeholder {
+  color: #A1B3D9;
+}</style>
+
+
+<body onLoad="onDeviceReady()">
+
+	<div data-role="page" id="mainPage" style="top:-10px;">
+	<div data-role="header"style="background-color:#4267B2;height:78px;">
+
+
+		<br>
+
+
+			<p style="margin-top:15px;height:40px:">
+				<input type="text" id="searchField" style="color:#fff;background-color:transparent;border:none;border-bottom:1px solid #6785C1;margin-top:-60px;height:30px;width:80%;margin:auto;margin-top:3px;margin-left:50px;"placeholder="Search in Guardians Of Harvest Moon..."></div>
+		<div data-role="content"style="">
+
+				<ul id="suggestions" data-role="listview" data-inset="true"></ul>
+			</p>
+			<center>
+<br>
+<br>
+<img src="images/pp.png" style="border-radius:50%;width:90px;height:90px">
+<br><br>
+	<font size="3"><b style="color:#4E5665">Looking for something?</b></font>
+</center>
+	</div>
+
+	<script>
+	
+		$("#mainPage").bind("pageshow", function(e) {
+
+     			  autocompleteData = $.parseJSON('[{"value":"(Apple Jam)","label":"Apple Jam"},{"value":"(Apple Pie)","label":"Apple Pie"},{"value":"(Bamboo Rice)","label":"Bamboo Rice"},{"value":"(Boiled Egg)","label":"Boiled Egg"},{"value":"(Butter)","label":"Butter"},{"value":"(Cake)","label":"Cake"},{"value":"(Cheese Fondue)","label":"Cheese Fondue"},{"value":"(Cheesecake)","label":"Cheesecake"},{"value":"(chirashi-sushi)","label":"Chirashi Sushi"},{"value":"(chocolate-cake)","label":"Chocolate Cake"},{"value":"(chocolate-cookie)","label":"Chocolate Cookie"},{"value":"(cookie)","label":"Cookie"},{"value":"(curry)","label":"Curry"},{"value":"(curry-noodles)","label":"Curry Noodles"},{"value":"(dinner-roll )","label":"Dinner Roll"},{"value":"(fried-noodles)","label":"Fried Noodles"},{"value":"(fried-rice)","label":"Fried Rice"},{"value":"(fries)","label":"Fries"},{"value":"(fruit-juice)","label":"Fruit Juice"},{"value":"(fruit-latte)","label":"Fruit Latte"},{"value":"(grape-jam)","label":"Grape Jam"},{"value":"(Greens)","label":"Greens"},{"value":"(grilled-fish)","label":"Grilled Fish"},{"value":"(happy-eggplant)","label":"Happy Epplant"},{"value":"(hot-milk)","label":"Hot Milk"},{"value":"(ice-cream)","label":"Ice Cream"},{"value":"(jam-bun)","label":"Jam Bun"},{"value":"(ketchup)","label":"Ketchup"},{"value":"(mayonnaise-small)","label":"Mayonnaise Small"},{"value":"(mayonnaise-medium)","label":"Mayonnaise Medium"},{"value":"(mayonnaise-large)","label":"Mayonnaise Large"},{"value":"(mayonnaise-xl)","label":"Mayonnaise X-Large"},{"value":"(miso-soup)","label":"Miso Soup"},{"value":"(mixed-juice)","label":"MixedJuice"},{"value":"(mixed-latte)","label":"Mixed Latte"},{"value":"(mushroom-rice)","label":"Mushroom Rice"},{"value":"(noodles)","label":"Noodles"},{"value":"(omelet)","label":"Omelet"},{"value":"(pickled-turnips)","label":"Pickled Turnips"},{"value":"(pickles)","label":"Pickles"},{"value":"(pizza)","label":"Pizza"},{"value":"(popcorn)","label":"Popcorn"},{"value":"(pumpkin-pudding)","label":"Pumpkin Pudding"},{"value":"(raisin-bread)","label":"Raisin Bread"},{"value":"(relaxation-tea)","label":"Relaxation Tea"},{"value":"(rice-omelet)","label":"Rice Omelet"},{"value":"(roasted-rotatoes)","label":"Roasted Potatoes"},{"value":"(salad)","label":"Salad"},{"value":"(sandwich)","label":"Sandwich"},{"value":"(sashimi)","label":"Sashimi"},{"value":"(scrambled-eggs)","label":"Scrambled Eggs"},{"value":"(stew)","label":"Stew"},{"value":"(stir-fry)","label":"Stir Fry"},{"value":"(strawberry-jam)","label":"Strawberry Jam"},{"value":"(strawberry-milk)","label":"Strawberry Milk"},{"value":"(sushi)","label":"Sushi"},{"value":"(sweet-potato)","label":"Sweet Potato dish"},{"value":"(tempura)","label":"Tempura"},{"value":"(tempura-noodles)","label":"Tempura Noodles"},{"value":"(tomato-juice)","label":"Tomato Juice"},{"value":"(truffle-rice)","label":"truffle-rice"},{"value":"(vegetable-juice)","label":"Vegetable Juice"},{"value":"(veggie-latte)","label":"Veggie Latte"},{"value":"(veggie-pancake)","label":"Veggie Pancake"}]');
+			$("#searchField").autocomplete({
+				target: $('#suggestions'),
+				source: autocompleteData,
+				link: 'table.html#',
+				minLength: 0
+			});
+		});
+		
+		$(document).ready(function(e) {
+      $('input#searchField').val('');
+			$('input#searchField').on('change keyup', function(){
+					if($(this).val() == ""){
+						$("#suggestions").html('');
+					}else{
+						
+					}
+			});
+			
+    });
+		
+	</script>
+
+</body>
+</html>
