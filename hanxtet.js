@@ -1,9 +1,8 @@
 function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
 class CardProfile extends React.Component {constructor(...args) {super(...args);_defineProperty(this, "state",
-
     {
       index: 3,
-      currentTime: '0',
+      currentTime: '00:00',
       musicList: [{ name: 'အချစ်ရဲ့ဆိုးကျိုး', author: 'Han Xtet', img: 'https://drive.google.com/uc?export=download&id=1P6hYk_b-tcDMlwXPgTEHR1mwWjLVxnEi', audio: 'https://drive.google.com/uc?export=download&id=1-61YewoVLltWRwiH82w_PG1fXBUfKLHo', duration: '3:36' },
       { name: 'အသဲကွဲဟန်ထက်', author: 'Han Xtet', img: 'https://drive.google.com/uc?export=download&id=1P6hYk_b-tcDMlwXPgTEHR1mwWjLVxnEi', audio: 'https://drive.google.com/uc?export=download&id=1-MqSHPS8HEANyDX-Pj8YsK-YSv5QK-vo', duration: '3:8' },
       { name: 'Bye', author: 'Han Xtet', img: 'https://drive.google.com/uc?export=download&id=1P6hYk_b-tcDMlwXPgTEHR1mwWjLVxnEi', audio: 'https://drive.google.com/uc?export=download&id=1-P-Vjsn0aOOFHhGRa2ouCrcCYLIrmcIY', duration: '3:29' },
